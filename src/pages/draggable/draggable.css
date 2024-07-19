@@ -1,12 +1,12 @@
-.container{
-    height: 100%;
-    width: 100%;
-    position: relative;
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
-.draggable-card{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    position: absolute;
-    cursor: grab;
+.draggable-card {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  cursor: grab;
 }

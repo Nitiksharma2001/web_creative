@@ -15,6 +15,7 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
     if (!cardRef.current) return
 
     const box = cardRef.current
+    const container = document.querySelector('.container') as HTMLDivElement
 
     const onMouseUp = () => {
       isSelected = false
@@ -31,6 +32,9 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
 
       startX = e.clientX
       startY = e.clientY
+
+      if(container.offsetWidth-(400+box.offsetWidth) < box.offsetLeft + diffX || box.offsetLeft + diffX < 0) return
+      if(container.offsetHeight-box.offsetHeight < box.offsetTop + diffY || box.offsetTop + diffY < 0) return
 
       box.style.top = box.offsetTop + diffY + 'px'
       box.style.left = box.offsetLeft + diffX + 'px'
@@ -56,7 +60,7 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
       style={{
         top: startY + 'px',
         left: startX + 'px',
-        backgroundColor: color,    
+        backgroundColor: color,
       }}
     ></div>
   )

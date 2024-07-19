@@ -39,7 +39,7 @@ export default function Draggable() {
         x: e.clientX - 25,
         y: e.clientY - 25,
       },
-    ] 
+    ]
     SetCards(newCards)
     localStorage.setItem('cards', JSON.stringify(newCards))
   }
