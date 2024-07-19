@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom"
-import Index from "../pages/Home/Index"
+import Draggable from "../pages/draggable/Draggable"
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Index />,
+    element: <Draggable />,
   },
 ])
