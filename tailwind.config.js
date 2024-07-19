@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'auto-4': 'repeat(4, minmax(0, auto))'
-      }
+        'auto-4': 'repeat(4, minmax(0, auto))',
+      },
     },
   },
   plugins: [require('daisyui')],

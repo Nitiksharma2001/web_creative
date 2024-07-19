@@ -33,8 +33,16 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
       startX = e.clientX
       startY = e.clientY
 
-      if(container.offsetWidth-(400+box.offsetWidth) < box.offsetLeft + diffX || box.offsetLeft + diffX < 0) return
-      if(container.offsetHeight-box.offsetHeight < box.offsetTop + diffY || box.offsetTop + diffY < 0) return
+      if (
+        container.offsetWidth - (400 + box.offsetWidth) < box.offsetLeft + diffX ||
+        box.offsetLeft + diffX < 0
+      )
+        return
+      if (
+        container.offsetHeight - box.offsetHeight < box.offsetTop + diffY ||
+        box.offsetTop + diffY < 0
+      )
+        return
 
       box.style.top = box.offsetTop + diffY + 'px'
       box.style.left = box.offsetLeft + diffX + 'px'
@@ -61,7 +69,6 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
         top: startY + 'px',
         left: startX + 'px',
         backgroundColor: color,
-      }}
-    ></div>
+      }}></div>
   )
 }
