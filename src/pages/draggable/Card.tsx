@@ -5,7 +5,7 @@ interface CardProps extends CardType {
   updateStorageonMouseUp: () => void
 }
 
-export default function Card({ x, y, updateStorageonMouseUp }: CardProps) {
+export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps) {
   let startX = x
   let startY = y
   const cardRef = useRef<HTMLDivElement>(null)
@@ -55,6 +55,7 @@ export default function Card({ x, y, updateStorageonMouseUp }: CardProps) {
       style={{
         top: startY + 'px',
         left: startX + 'px',
+        backgroundColor: color,    
       }}
     ></div>
   )
