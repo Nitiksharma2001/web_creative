@@ -51,6 +51,7 @@ export default function Card({ x, y, color, updateStorageonMouseUp }: CardProps)
   return (
     <div
       ref={cardRef}
+      id='abcd'
       className='draggable-card'
       style={{
         top: startY + 'px',

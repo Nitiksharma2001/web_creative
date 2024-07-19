@@ -6,7 +6,7 @@ export default function Sidebar() {
     <div className='sidebar'>
       {items.map((item) => (
         <div draggable key={item} onDragStart={(e) => e.dataTransfer.setData('color', item)}>
-          {item}
+          {item[0].toUpperCase() + item.substring(1)}
         </div>
       ))}
     </div>

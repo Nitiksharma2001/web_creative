@@ -13,13 +13,6 @@ export default function Draggable() {
   const [cards, SetCards] = useState<CardType[]>([])
 
   useEffect(() => {
-    const onEscapePress = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        console.log('Escape key was pressed!')
-      }
-    }
-    document.addEventListener('keydown', onEscapePress)
-
     const cards = localStorage.getItem('cards')
     if (cards) {
       SetCards(JSON.parse(cards) as CardType[])
@@ -39,14 +32,16 @@ export default function Draggable() {
 
   const newBoxAdded = (e: React.DragEvent<HTMLDivElement>) => {
     const color = e.dataTransfer.getData('color')
-    SetCards([
+    const newCards = [
       ...cards,
       {
         color,
-        x: e.clientX,
-        y: e.clientY,
+        x: e.clientX - 25,
+        y: e.clientY - 25,
       },
-    ])
+    ] 
+    SetCards(newCards)
+    localStorage.setItem('cards', JSON.stringify(newCards))
   }
 
   return (
